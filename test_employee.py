@@ -3,6 +3,14 @@ from employee import Employee
 
 
 class TestEmployee(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        print("setUpClass\n")
+    
+    @classmethod
+    def tearDownClass(cls) -> None:
+        print("tearDownClass")
+
     def setUp(self) -> None:
         print("setUp")
         self.employee_1 = Employee("Krisztian", "Markella", 60_000)
