@@ -4,13 +4,15 @@ from employee import Employee
 
 class TestEmployee(unittest.TestCase):
     def setUp(self) -> None:
+        print("setUp")
         self.employee_1 = Employee("Krisztian", "Markella", 60_000)
         self.employee_2 = Employee("Christian", "Markella", 10_000)
 
     def tearDown(self) -> None:
-        pass
+        print("tearDown\n")
 
     def test_email(self):
+        print("test_email")
         self.assertEqual(self.employee_1.email, "Krisztian.Markella@email.com")
         self.assertEqual(self.employee_2.email, "Christian.Markella@email.com")
         
@@ -19,6 +21,7 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.employee_2.email, "Mark.Markella@email.com")
 
     def test_fullname(self):
+        print("test_fullname")
         self.assertEqual(self.employee_1.fullname, "Krisztian Markella")
         self.assertEqual(self.employee_2.fullname, "Christian Markella")
         
@@ -27,6 +30,7 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.employee_2.fullname, "Mark Markella")
 
     def test_raise(self):
+        print("test_raise")
         self.assertEqual(self.employee_1.pay, 60_000)
         self.assertEqual(self.employee_2.pay, 10_000)
         
